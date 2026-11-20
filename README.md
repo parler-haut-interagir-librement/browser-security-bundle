@@ -63,6 +63,7 @@ of each response.
 | [User content](doc/user-content.md) | The strict headers of an uploaded file, by route, by controller or by response. |
 | [Worker mode and profiler](doc/runtime.md) | What lives where during a request, `kernel.reset`, the profiler panel. |
 | [Extension points](doc/extension-points.md) | The ports, services and events an application uses or replaces. |
+| [ASVS 5.0 mapping](doc/asvs.md) | The requirements of chapter V3 the bundle meets, the tests that show them, and those left to the application. |
 | [Testing](doc/testing.md) | The tests, the mutation bar, the fuzz target and the benchmark. |
 | [Reference](doc/reference.md) | Every type of the bundle, with its role. |
 
@@ -81,7 +82,7 @@ phil_browser_security:
                 default-src: ["'self'"]
                 img-src: ["'self'", 'data:']
                 object-src: ["'none'"]
-                base-uri: ["'self'"]
+                base-uri: ["'none'"]
                 frame-ancestors: ["'self'"]
             strict_dynamic: true
     reporting:
@@ -104,7 +105,7 @@ phil_browser_security:
 
 ## Requirements
 
-PHP 8.5 or later with `ctype`, `mbstring`, `sodium` and `uri`, Symfony 8.2 or later, and `phil/rate-limit`. Twig,
+PHP 8.5 or later with `ctype`, `mbstring`, `sodium` and `uri`, Symfony 8.2 or later, `phil/rate-limit` and `phil/url`. Twig,
 AssetMapper, the rate limiter, a PSR-6 pool, Doctrine DBAL, the console, security-http and `phil/ip-anonymizer` are
 optional, each enabling one part.
 

@@ -1,4 +1,4 @@
-<!-- phil-dev source-sha256=640f589465bceca6fe0089c224270021624e632965561a72a22040535a423cce -->
+<!-- phil-dev source-sha256=c22db27cf0f91e6fea909236f521d780b8aa9b2bad255831453a16c2e3664050 -->
 # phil/browser-security-bundle
 
 **Les protections qu'une application Symfony demande au navigateur, en un seul bundle : une configuration, ajustable
@@ -66,6 +66,7 @@ le profileur montre la politique de chaque réponse.
 | [Contenu d'usager](doc/fr/user-content.md) | Les en-têtes stricts d'un fichier téléversé, par route, par contrôleur ou par réponse. |
 | [Mode worker et profileur](doc/fr/runtime.md) | Ce qui vit où pendant une requête, `kernel.reset`, le panneau du profileur. |
 | [Points d'extension](doc/fr/extension-points.md) | Les ports, services et événements qu'une application utilise ou remplace. |
+| [Correspondance avec ASVS 5.0](doc/fr/asvs.md) | Les exigences du chapitre V3 que le bundle satisfait, les tests qui les démontrent et celles qui reviennent à l'application. |
 | [Tests](doc/fr/testing.md) | Les tests, le seuil de mutation, la cible de fuzzing et le banc d'essai. |
 | [Référence](doc/fr/reference.md) | Chaque type du bundle, avec son rôle. |
 
@@ -84,7 +85,7 @@ phil_browser_security:
                 default-src: ["'self'"]
                 img-src: ["'self'", 'data:']
                 object-src: ["'none'"]
-                base-uri: ["'self'"]
+                base-uri: ["'none'"]
                 frame-ancestors: ["'self'"]
             strict_dynamic: true
     reporting:
@@ -107,7 +108,7 @@ phil_browser_security:
 
 ## Prérequis
 
-PHP 8.5 ou plus récent avec `ctype`, `mbstring`, `sodium` et `uri`, Symfony 8.2 ou plus récent, et `phil/rate-limit`.
+PHP 8.5 ou plus récent avec `ctype`, `mbstring`, `sodium` et `uri`, Symfony 8.2 ou plus récent, `phil/rate-limit` et `phil/url`.
 Twig, AssetMapper, le rate limiter, un pool PSR-6, Doctrine DBAL, la console, security-http et `phil/ip-anonymizer` sont
 facultatifs, chacun activant une partie.
 
